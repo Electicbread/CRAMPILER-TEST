@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ink: 46 36 25;
+  /* #2E2419 grounding dark brown text */
+  --color-paper: 238 240 230;
+  /* #EEF0E6 sage page background */
+  --color-panel: 247 247 240;
+  /* #F7F7F0 card surfaces */
+  --color-line: 201 192 170;
+  /* #C9C0AA hairline borders */
+  --color-forest: 61 107 79;
+  /* #3D6B4F primary actions */
+  --color-amber: 201 138 62;
+  /* #C98A3E due-soon accents */
+  --color-critical: 166 64 54;
+  /* #A6402C overdue only */
+}
+
+.dark {
+  --color-ink: 237 232 221;
+  /* light warm cream text on dark bg */
+  --color-paper: 26 22 17;
+  /* deep warm brown-black background */
+  --color-panel: 38 32 25;
+  /* slightly lifted card surface */
+  --color-line: 74 64 48;
+  /* muted warm brown-grey borders */
+  --color-forest: 91 156 119;
+  /* brighter green for dark-bg contrast */
+  --color-amber: 224 165 90;
+  /* brighter amber for dark-bg contrast */
+  --color-critical: 217 99 75;
+  /* brighter red-brown for dark-bg contrast */
+}
+
+body {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  color: rgb(var(--color-ink));
+  background-color: rgb(var(--color-paper));
+}
+
+:focus-visible {
+  outline: 2px solid rgb(var(--color-forest));
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96)
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1)
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.15s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.18s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.2s ease-out;
+}

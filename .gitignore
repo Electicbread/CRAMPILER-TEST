@@ -1,0 +1,20 @@
+# --- Backend (Java / Maven) ---
+backend/target/
+backend/*.iml
+backend/.idea/
+*.class
+
+# --- Frontend (Node / Vite) ---
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# --- Credentials: never commit your real Atlas connection string ---
+backend/src/main/resources/application-local.properties
+.env
+.env.local
+
+# --- OS / editor noise ---
+.DS_Store
+.vscode/
+.idea/
